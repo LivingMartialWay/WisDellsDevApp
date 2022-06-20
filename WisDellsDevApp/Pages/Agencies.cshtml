@@ -8,22 +8,16 @@
 <table>
     <thead>
         <tr>
-            <th>ID</th>
+            <th>HEY!</th>
             <th>Name</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var agency in Model.listAgencies)
         {
          <tr>
-            <td>@agency.AgencyID</td>
-            <td>@agency.AName</td>
-            <td>@agency.ACity</td>
-            <td>@agency.AState</td>
-            <td>@agency.AZip</td>
+            <td>@agency.RecNo</td>
+            <td>@agency.PickUpBy</td>
         </tr>
         }
     </tbody>

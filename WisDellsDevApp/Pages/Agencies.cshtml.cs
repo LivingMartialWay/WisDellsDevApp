@@ -24,7 +24,7 @@ namespace WisDellsDevApp.Pages
                 using (SqlConnection connection = new SqlConnection(AdminConnString))
                 {
                     connection.Open();
-                    string sql = "Select * From web.Agencies";
+                    string sql = "Select * From PickUpLog";
                     using (SqlCommand cmd = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
@@ -32,11 +32,8 @@ namespace WisDellsDevApp.Pages
                             while (reader.Read())
                             {
                                 AgencyList agency = new AgencyList();
-                                agency.AgencyID = reader.GetInt32(0);
-                                agency.AName = reader.GetString(1);
-                                agency.ACity = reader.GetString(2);
-                                agency.AState = reader.GetString(3);
-                                agency.AZip = reader.GetString(4);
+                                agency.RecNo = reader.GetInt32(0);
+                                agency.PickUpBy = reader.GetString(1);
 
                                 listAgencies.Add(agency);
                             }
@@ -54,11 +51,8 @@ namespace WisDellsDevApp.Pages
 
     public class AgencyList
     {
-        public int AgencyID { get; set; }
-        public string AName { get; set; }
-        public string AStreet { get; set; }
-        public string ACity { get; set; }
-        public string AState { get; set; }
-        public string AZip { get; set; }
+        public int RecNo { get; set; }
+        public string PickUpBy { get; set; }
+
     }
 }
