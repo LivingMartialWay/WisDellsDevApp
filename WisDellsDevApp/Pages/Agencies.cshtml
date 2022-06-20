@@ -1,0 +1,30 @@
+﻿@page
+@model WisDellsDevApp.Pages.AgenciesModel
+@{
+}
+<br />
+<h2>Agencies</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var agency in Model.listAgencies)
+        {
+         <tr>
+            <td>@agency.AgencyID</td>
+            <td>@agency.AName</td>
+            <td>@agency.ACity</td>
+            <td>@agency.AState</td>
+            <td>@agency.AZip</td>
+        </tr>
+        }
+    </tbody>
+</table>
