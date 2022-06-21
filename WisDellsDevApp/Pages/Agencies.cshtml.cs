@@ -19,7 +19,8 @@ namespace WisDellsDevApp.Pages
         {
             try
             {
-                string AdminConnString = _configuration.GetConnectionString("csAdmin");
+                 string AdminConnString = _configuration.GetConnectionString("csAdmin");
+                //string AdminConnString = "Data Source = DATASERVER\\SQL2017; Initial Catalog = Intranet; Persist Security Info = True; User ID = webuser; Password = info4web";
                 //string AdminConnString = "Data Source = dataserver.wingis.local; Initial Catalog = admin; Persist Security Info = True; User ID = arcims; Password = gis4web";
                 using (SqlConnection connection = new SqlConnection(AdminConnString))
                 {
