@@ -19,7 +19,7 @@ namespace WisDellsDevApp.Pages
         {
             try
             {
-                 string AdminConnString = _configuration.GetConnectionString("csAdmin");
+                string AdminConnString = _configuration.GetConnectionString("csAdmin");
                 //string AdminConnString = "Data Source = DATASERVER\\SQL2017; Initial Catalog = Intranet; Persist Security Info = True; User ID = webuser; Password = info4web";
                 //string AdminConnString = "Data Source = dataserver.wingis.local; Initial Catalog = admin; Persist Security Info = True; User ID = arcims; Password = gis4web";
                 using (SqlConnection connection = new SqlConnection(AdminConnString))
@@ -34,7 +34,9 @@ namespace WisDellsDevApp.Pages
                             {
                                 AgencyList agency = new AgencyList();
                                 agency.RecNo = reader.GetInt32(0);
-                                agency.PickUpBy = reader.GetString(1);
+                                agency.DropOffDate = reader.GetDateTime(1);
+                                agency.PickUpBy = reader.GetString(2);
+                                agency.CompletedDate = reader.GetDateTime(3);
 
                                 listAgencies.Add(agency);
                             }
@@ -53,7 +55,9 @@ namespace WisDellsDevApp.Pages
     public class AgencyList
     {
         public int RecNo { get; set; }
-        public string PickUpBy { get; set; }
+        public DateTime DropOffDate { get; set; }
+        public DateTime CompletedDate { get; set; }
+        public String PickUpBy { get; set; }
 
     }
 }
