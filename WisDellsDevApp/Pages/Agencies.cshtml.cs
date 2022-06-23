@@ -25,7 +25,7 @@ namespace WisDellsDevApp.Pages
                 using (SqlConnection connection = new SqlConnection(AdminConnString))
                 {
                     connection.Open();
-                    string sql = "Select * From PickUpLog";
+                    string sql = "Select * From DropOffLog";
                     using (SqlCommand cmd = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
@@ -33,10 +33,10 @@ namespace WisDellsDevApp.Pages
                             while (reader.Read())
                             {
                                 AgencyList agency = new AgencyList();
-                                agency.RecNo = reader.GetInt32(0);
-                                agency.DropOffDate = reader.GetDateTime(1);
-                                agency.PickUpBy = reader.GetString(2);
-                                agency.CompletedDate = reader.GetDateTime(3);
+                                agency.RecNo = (int)reader.GetInt32(0);
+                                agency.DeliveryTypec
+                                agency.DeliveredWhen = (DateTime)reader.GetDateTime(2);
+
 
                                 listAgencies.Add(agency);
                             }
@@ -55,9 +55,8 @@ namespace WisDellsDevApp.Pages
     public class AgencyList
     {
         public int RecNo { get; set; }
-        public DateTime DropOffDate { get; set; }
-        public DateTime CompletedDate { get; set; }
-        public String PickUpBy { get; set; }
-
+        public string? DeliveryType { get; set; }
+        public DateTime DeliveredWhen { get; set; } 
+        public double PaymentAmount { get; set; }
     }
 }
