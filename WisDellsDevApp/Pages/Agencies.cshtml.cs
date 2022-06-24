@@ -34,7 +34,7 @@ namespace WisDellsDevApp.Pages
                             {
                                 AgencyList agency = new AgencyList();
                                 agency.RecNo = (int)reader.GetInt32(0);
-                                agency.DeliveryTypec
+                                agency.DeliveryType = (string)reader.GetString(1);
                                 agency.DeliveredWhen = (DateTime)reader.GetDateTime(2);
 
 
