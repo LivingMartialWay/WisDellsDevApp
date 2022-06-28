@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
+
+// I hate to tell you this, but this is very clearly a .NET 5 application because there is NameSpacing, Classing and voids here.
+
 namespace WisDellsDevApp.Pages
 {
     public class AgenciesModel : PageModel
