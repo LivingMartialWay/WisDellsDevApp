@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 
 // I hate to tell you this, but this is very clearly a .NET 5 application because there is NameSpacing, Classing and voids here.
-
+// .NET 6 Apps have this all "Assumed" and there is no explicit classing, namespacing, etc
 namespace WisDellsDevApp.Pages
 {
     public class AgenciesModel : PageModel
